@@ -126,6 +126,36 @@ const interviewAgentService = {
   },
 
   /**
+   * Warm up the backend and measure a fair round-trip latency.
+   *
+   * Free-tier hosts (e.g. Render) sleep after inactivity, so the first request
+   * can take several seconds purely due to a cold start. We fire an initial
+   * wake-up ping (whose time we discard) and then measure a second ping for the
+   * real latency. Both use the readiness endpoint.
+   *
+   * @returns {Promise<{ reachable: boolean, latency: number|null, warmed: boolean }>}
+   */
+  measureReadiness: async () => {
+    // 1. Warm-up ping — absorbs any cold-start delay. Errors here are ignored;
+    // the measured ping below is the authoritative signal.
+    try {
+      await api.get('/interviews/readiness/ping', { timeout: 20000 });
+    } catch (_) {
+      // Fall through to the measured attempt, which will surface real failures.
+    }
+
+    // 2. Measured ping
+    const startTime = performance.now();
+    const response = await api.get('/interviews/readiness/ping', { timeout: 15000 });
+    const latency = Math.round(performance.now() - startTime);
+    return {
+      ...response.data,
+      latency,
+      reachable: true,
+    };
+  },
+
+  /**
    * Log an incident during continuous monitoring
    */
   recordMonitoringIncident: async (interviewId, incident) => {

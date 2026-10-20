@@ -199,12 +199,16 @@ const InterviewReadinessModal = ({
     }
 
     try {
-      const pingResult = await interviewAgentService.pingReadiness();
+      // Warm up the backend (absorbs Render cold starts), then measure a fair RTT.
+      const pingResult = await interviewAgentService.measureReadiness();
       const latency = pingResult.latency || 45;
 
+      // Thresholds reflect total round-trip including server time. A successful
+      // response always means we ARE connected; only genuinely severe latency is
+      // treated as unstable so cold starts don't block the interview.
       let netState = 'GOOD';
-      if (latency > 350) netState = 'UNSTABLE';
-      else if (latency > 150) netState = 'FAIR';
+      if (latency > 1500) netState = 'UNSTABLE';
+      else if (latency > 600) netState = 'FAIR';
 
       if (netState === 'UNSTABLE') {
         setChecks((prev) => ({
@@ -228,10 +232,12 @@ const InterviewReadinessModal = ({
         }));
       }
     } catch (_) {
-      // Fallback network reachability check
+      // Fallback reachability check against the backend health endpoint.
       const start = performance.now();
+      const apiBase = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+      const healthUrl = `${apiBase}/health`;
       try {
-        await fetch('/api/health');
+        await fetch(healthUrl, { method: 'GET' });
         const lat = Math.round(performance.now() - start);
         setChecks((prev) => ({
           ...prev,
