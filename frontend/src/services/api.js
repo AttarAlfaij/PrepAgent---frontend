@@ -1,7 +1,18 @@
 import axios from 'axios';
 
+// Resolve the API base URL from the build-time environment (Vite).
+// VITE_API_URL should be the full API root including the /api prefix, e.g.
+// https://prepagent-backend-lf3g.onrender.com/api
+// Falls back to localhost for local development.
+const rawBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
+// Normalize: strip any trailing slash, then ensure the /api prefix is present
+// exactly once so we never produce duplicated or missing path segments.
+const trimmed = rawBaseUrl.replace(/\/+$/, '');
+const baseURL = /\/api$/.test(trimmed) ? trimmed : `${trimmed}/api`;
+
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL,
   headers: {
     'Content-Type': 'application/json',
   },

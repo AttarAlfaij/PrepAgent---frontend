@@ -65,11 +65,18 @@ const Signup = () => {
         toastError(res.message || 'Failed to create account.');
       }
     } catch (err) {
-      const msg =
+      let msg =
         err.response?.data?.message ||
-        (err.response?.data?.errors && err.response.data.errors[0]) ||
-        'An error occurred during registration.';
-      toastError(msg);
+        (err.response?.data?.errors && err.response.data.errors[0]);
+
+      // No HTTP response => network/CORS/timeout. Surface a useful, safe hint
+      // instead of a generic failure, without leaking internal details.
+      if (!msg && !err.response) {
+        msg =
+          'Could not reach the server. Please check your connection and try again.';
+      }
+
+      toastError(msg || 'An error occurred during registration.');
     } finally {
       setIsSubmitting(false);
     }
