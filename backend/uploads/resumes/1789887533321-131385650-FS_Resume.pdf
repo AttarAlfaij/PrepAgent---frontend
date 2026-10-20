@@ -1,0 +1,20 @@
+
+VIDYA HATTURE
+San Jose, CA | vidya@example.com | +1-555-0199
+
+PROFESSIONAL SUMMARY
+QA Automation Engineer with 3+ years experience testing GPU compute software, Python automation frameworks, and REST APIs.
+
+TECHNICAL SKILLS
+- Languages: Python, JavaScript, SQL, C++ (Basic)
+- Automation Tools: PyTest, Selenium WebDriver, Postman, Docker
+- Databases: PostgreSQL, MongoDB
+
+EXPERIENCE
+Software QA Engineer | DeepTech Labs (2022 - Present)
+- Designed and maintained automated regression suites in PyTest, executing 400+ automated test cases nightly.
+- Performed API testing and validation with Postman, ensuring zero critical regressions across 12 releases.
+
+PROJECTS
+Automated GPU Test Harness
+- Built scalable test automation harnesses in Python for testing multi-threaded asynchronous tasks.

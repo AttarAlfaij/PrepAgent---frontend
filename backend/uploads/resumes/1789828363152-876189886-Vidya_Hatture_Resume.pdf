@@ -1,0 +1,40 @@
+VIDYA HATTURE
+Pune, Maharashtra | vidya@example.com | +91 9876543210
+LinkedIn: linkedin.com/in/vidya-hatture | GitHub: github.com/vidyahatture
+
+PROFESSIONAL SUMMARY
+Analytical and detail-oriented Software Engineer with a strong foundation in automated testing, Java, Python, and SQL. Experienced in developing automated test suites with Selenium and Postman for REST API verification.
+
+EDUCATION
+Bachelor of Engineering (B.E.) in Computer Science & Engineering
+Savtribai Phule Pune University | 2020 - 2024 | CGPA: 8.7/10
+
+TECHNICAL SKILLS
+- Programming: Java, Python, JavaScript, SQL
+- Testing Tools & Frameworks: Selenium WebDriver, TestNG, Postman, JUnit
+- Methodologies: STLC, SDLC, Agile / Scrum, Manual Testing, Defect Tracking
+- Tools & Platforms: Git, GitHub, JIRA, Jenkins, MySQL
+
+EXPERIENCE
+QA Intern | TechSolutions India | Jan 2024 - Jun 2024
+- Authored over 150+ automated test cases using Java and Selenium WebDriver.
+- Conducted REST API testing using Postman, validating JSON payloads and HTTP status codes.
+- Reported and tracked 40+ software defects using JIRA through their complete bug lifecycle.
+- Participated in daily Agile standup meetings and bi-weekly sprint reviews.
+
+PROJECTS
+1. E-Commerce Automation Testing Framework
+- Built an end-to-end test automation framework using Java, Selenium WebDriver, and TestNG.
+- Implemented Page Object Model (POM) design pattern reducing script maintenance effort by 35%.
+- Integrated test results reporting with ExtentReports.
+
+2. API Verification & Performance Suite
+- Created Postman collections with automated JavaScript test assertions for a microservices architecture.
+- Verified 50+ REST endpoints covering authentication, data retrieval, and error response validation.
+
+CERTIFICATIONS
+- ISTQB Certified Tester Foundation Level (CTFL)
+- Oracle Certified Associate: Java SE 8 Programmer
+
+ACHIEVEMENTS
+- First Prize in Inter-College Code Debugging Competition 2023

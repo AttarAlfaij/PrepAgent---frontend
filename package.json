@@ -1,0 +1,14 @@
+{
+  "name": "prepagent-ai-root",
+  "version": "1.0.0",
+  "description": "PrepAgent AI - Complete Platform (Phase 1 & Phase 2)",
+  "scripts": {
+    "start:backend": "npm --prefix backend start",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "test:backend": "node backend/test_suite.js",
+    "test:phase3": "node backend/test_phase3.js",
+    "test:all": "node backend/test_suite.js && node backend/test_phase3.js"
+  }
+}

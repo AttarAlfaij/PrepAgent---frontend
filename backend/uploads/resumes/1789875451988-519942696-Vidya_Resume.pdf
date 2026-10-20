@@ -1,0 +1,26 @@
+VIDYA HATTURE
+San Jose, CA | vidya@example.com | +1 555 0199
+LinkedIn: linkedin.com/in/vidyahatture | GitHub: github.com/vidyahatture
+
+PROFESSIONAL SUMMARY
+Senior Quality Assurance & Test Automation Engineer with 4 years experience in Python test automation, PyTest, Docker, CI/CD pipelines, and microservice validation.
+
+TECHNICAL SKILLS
+- Languages: Python, Java, SQL, JavaScript
+- Automation Frameworks: PyTest, Selenium, Postman, RestAssured
+- Tools & Cloud: Docker, Kubernetes, Jenkins, Git, JIRA
+- Databases: PostgreSQL, MongoDB
+
+EXPERIENCE
+Software Test Engineer | CloudTech Solutions (2021 - Present)
+- Architected automated test suites in Python with PyTest covering 120+ microservices.
+- Reduced regression testing cycles by 40% using parallelized test execution in Docker.
+
+PROJECTS
+E-Commerce Automated Test Suite
+- Built Page Object Model automation suite in Python and PyTest with automated visual regression testing.
+Distributed Log Testing Harness
+- Developed mock microservices in Docker to simulate network latency, dropped packets, and failover scenarios.
+
+EDUCATION
+B.S. in Computer Science | State University (2017 - 2021)
